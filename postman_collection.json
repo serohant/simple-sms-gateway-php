@@ -1,0 +1,103 @@
+{
+  "info": {
+    "name": "SMS API",
+    "_postman_id": "a1111111-b222-c333-d444-e55555555555",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Send (single)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "X-API-Key",
+            "value": "DEMO_API_KEY_123456"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost/api/sms/send",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "path": [
+            "api",
+            "sms",
+            "send"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\"to\": \"+905551112233\", \"message\": \"Merhaba!\"}"
+        }
+      }
+    },
+    {
+      "name": "Bulk",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "X-API-Key",
+            "value": "DEMO_API_KEY_123456"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost/api/sms/bulk",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "path": [
+            "api",
+            "sms",
+            "bulk"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\"to\": [\"+905551112233\", \"+905554445566\"], \"message\": \"Duyuru metni\"}"
+        }
+      }
+    },
+    {
+      "name": "Status",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "X-API-Key",
+            "value": "DEMO_API_KEY_123456"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost/api/sms/status?id=MSG-2025-000001",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "path": [
+            "api",
+            "sms",
+            "status"
+          ],
+          "query": [
+            {
+              "key": "id",
+              "value": "MSG-2025-000001"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
